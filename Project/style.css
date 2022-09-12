@@ -1,0 +1,117 @@
+body {
+  padding: 100px;
+}
+form {
+  text-align: center;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+h1,
+h2,
+h4 {
+  padding-bottom: 5px;
+  color: #393e46;
+  padding-left: 60px;
+  max-height: 70px;
+}
+
+h1 {
+  font-size: 35px;
+}
+
+h2 {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;
+}
+
+/* General Content section */
+
+.content {
+  max-width: 600px;
+  padding-top: 20px;
+  padding-bottom: 1px;
+  padding-left: 28px;
+  border: 1px solid #a16778;
+  border-radius: 15px;
+  background: linear-gradient(
+    109.6deg,
+    rgb(151, 213, 255) 11.2%,
+    rgb(255, 155, 185) 91.1%
+  );
+}
+
+/* Input section */
+
+.search {
+  color: #ffff;
+  background: #407088;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  padding: 3px 18px;
+}
+
+/* Serch results section */
+
+.additionalinfo {
+  position: relative;
+  top: -100px;
+  color: #393e46;
+  padding-left: 30px;
+}
+.skyNow {
+  text-transform: capitalize;
+}
+
+.sun-icon {
+  color: #ffff;
+  font-size: 155px;
+  position: relative;
+  top: -175px;
+  left: 300px;
+}
+
+.bigDegrees {
+  font-size: 20px;
+  position: relative;
+  top: -60px;
+  left: 80px;
+}
+.unit {
+  color: #393e46;
+  text-decoration: none;
+}
+.unit:hover {
+  text-decoration: underline;
+  color: black;
+}
+/* Forecast section */
+
+div .card {
+  font-size: 10px;
+  position: relative;
+  top: -50px;
+  background-color: transparent;
+  border: 0;
+}
+
+.forecast-whether {
+  position: relative;
+  top: -50px;
+  text-align: center;
+}
+.day-forecast {
+  font-size: 16px;
+}
+.forecast-icon {
+  color: #fff;
+  text-align: center;
+  font-size: 50px;
+  padding-bottom: 10px;
+}
+.degrees {
+  font-size: 16px;
+}
