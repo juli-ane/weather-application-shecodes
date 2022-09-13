@@ -115,3 +115,8 @@ div .card {
 .degrees {
   font-size: 16px;
 }
+.author {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+}
