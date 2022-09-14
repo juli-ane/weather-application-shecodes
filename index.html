@@ -20,93 +20,102 @@
   </head>
 
   <body>
-    <div class="container content">
-      <form id="city-form">
-        <input type="text" placeholder="Enter your city" id="input-city" />
-        <input type="submit" value="Seach 🔎" class="search" />
-        <button class="search" id="locationButton">Location📍</button>
-      </form>
-
-      <br />
+    <div class="app">
+      <div class="container content">
+        <form id="city-form">
+          <input type="search" placeholder="Enter your city" id="input-city" class="typeCity" />
+          <input type="submit" value="Seach" class="search" />
+          <button class="search" id="locationButton">Location</button>
+        </form>
+        <br />
+  <div class="container text-left">
+  <div class="row">
+    <div class="col">
       <h1 id="displayCity"></h1>
-
-      <h2>
-        <a href="#" class="unit" id="bigTemperature">25</a>
-
-        <p class="bigDegrees">
-          <a href="#" class="unit" id="celsius">ºC</a>
-        </p>
-      </h2>
-
-      <h4 id="currentTime"></h4>
-
-      <i class="fa-solid fa-cloud-sun sun-icon"></i>
-      <div class="additionalinfo">
+        <h2>
+          <a href="#" class="unit" id="bigTemperature"></a>
+          <p class="bigDegrees">
+            <a href="#" class="unit" id="celsius">ºC</a>
+          </p>
+        </h2>
+        <h4 id="currentTime"></h4>
+         </div>
+          <div class="col">
         <ul>
-          <li class="skyNow" id="sky"></li>
-          <li class="humidityNow" id="humidity"></li>
-          <li class="windyNow" id="wind"></li>
-        </ul>
-      </div>
-      <br />
-      <div class="row justify-content-center forecast-whether">
-        <div class="col-md-2">
-          <div class="card">
-            <div class="card-body">
-              <h6 class="card-title day-forecast">Sun</h6>
-              <i class="fa-solid fa-cloud-rain forecast-icon"></i>
-              <p class="card-text degrees">25º <strong>/34º</strong></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-2">
-          <div class="card">
-            <div class="card-body">
-              <h6 class="card-title day-forecast">Mon</h6>
-              <i class="fa-solid fa-sun forecast-icon"></i>
-              <p class="card-text degrees">17º <strong>/29º</strong></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="card">
-            <div class="card-body">
-              <h6 class="card-title day-forecast">Tue</h6>
-              <i class="fa-solid fa-sun forecast-icon"></i>
-              <p class="card-text degrees">16º <strong>/24º</strong></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="card">
-            <div class="card-body">
-              <h6 class="card-title day-forecast">Wed</h6>
-              <i class="fa-solid fa-cloud-bolt forecast-icon"></i>
-              <p class="card-texts degrees">20º <strong>/28º</strong></p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-2">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title day-forecast">Thu</h5>
-              <i class="fa-solid fa-cloud-showers-heavy forecast-icon"></i>
-              <p class="card-text degrees">18º <strong>/25º</strong></p>
-            </div>
-          </div>
-        </div>
-      </div>
+            <li class="skyNow" id="sky"></li>
+            <li class="humidityNow" id="humidity"></li>
+            <li class="windyNow" id="wind"></li>
+          </ul>
+    </div>       
+   
+    <div class="col">
+       <i class="fa-solid fa-cloud-sun sun-icon"></i>
     </div>
-    <div class="author">
-      <a
-        href="https://github.com/juli-ane/weather-application-shecodes"
-        target="_blank"
-      >
-        Open-Source code
-      </a>
-      by Juliane Soares
+  </div>
+        
+
+       
+       
+        <br />
+        <div class="row justify-content-center forecast-whether">
+          <div class="col-md-2">
+            <div class="card">
+              <div class="card-body">
+                <h6 class="card-title day-forecast">Sun</h6>
+                <i class="fa-solid fa-cloud-rain forecast-icon"></i>
+                <p class="card-text degrees">25º <strong>/34º</strong></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="card">
+              <div class="card-body">
+                <h6 class="card-title day-forecast">Mon</h6>
+                <i class="fa-solid fa-sun forecast-icon"></i>
+                <p class="card-text degrees">17º <strong>/29º</strong></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <div class="card">
+              <div class="card-body">
+                <h6 class="card-title day-forecast">Tue</h6>
+                <i class="fa-solid fa-sun forecast-icon"></i>
+                <p class="card-text degrees">16º <strong>/24º</strong></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2">
+            <div class="card">
+              <div class="card-body">
+                <h6 class="card-title day-forecast">Wed</h6>
+                <i class="fa-solid fa-cloud-bolt forecast-icon"></i>
+                <p class="card-texts degrees">20º <strong>/28º</strong></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title day-forecast">Thu</h5>
+                <i class="fa-solid fa-cloud-showers-heavy forecast-icon"></i>
+                <p class="card-text degrees">18º <strong>/25º</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="author">
+          <a
+            href="https://github.com/juli-ane/weather-application-shecodes"
+            target="_blank"
+          >
+            Open-Source code
+          </a>
+          by Juliane Soares
+        </div>
+      </div>
     </div>
     <script src="index.js"></script>
   </body>

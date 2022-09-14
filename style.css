@@ -1,6 +1,3 @@
-body {
-  padding: 100px;
-}
 form {
   text-align: center;
   padding-bottom: 30px;
@@ -26,52 +23,54 @@ h2 {
 
 ul {
   list-style: none;
+  font-size: 12px;
+  position: relative;
+  bottom: -140px;
+  color: #70757a;
 }
 
 /* General Content section */
 
+.app {
+  max-width: 800px;
+  margin: 60px auto;
+}
+
 .content {
-  max-width: 600px;
-  padding-top: 20px;
-  padding-bottom: 1px;
-  padding-left: 28px;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
   border: 1px solid #a16778;
   border-radius: 15px;
-  background: linear-gradient(
-    109.6deg,
-    rgb(151, 213, 255) 11.2%,
-    rgb(255, 155, 185) 91.1%
-  );
 }
 
 /* Input section */
 
+.typeCity {
+  border-radius: 5px;
+  border: 0px solid #7532f8;
+  background-color: #f2dae0;
+  max-height: 30px;
+  padding: 20px 30px;
+}
+
 .search {
   color: #ffff;
-  background: #407088;
+  background: #7532f9;
   border-radius: 5px;
   border: 1px solid #fff;
-  padding: 3px 18px;
+  padding: 8px 18px;
 }
 
 /* Serch results section */
 
-.additionalinfo {
-  position: relative;
-  top: -100px;
-  color: #393e46;
-  padding-left: 30px;
-}
-.skyNow {
-  text-transform: capitalize;
-}
-
 .sun-icon {
-  color: #ffff;
-  font-size: 155px;
+  color: #70757a;
+  font-size: 140px;
   position: relative;
-  top: -175px;
-  left: 300px;
+  top: 25px;
 }
 
 .bigDegrees {
@@ -90,33 +89,38 @@ ul {
 }
 /* Forecast section */
 
-div .card {
-  font-size: 10px;
-  position: relative;
-  top: -50px;
-  background-color: transparent;
-  border: 0;
-}
-
 .forecast-whether {
   position: relative;
-  top: -50px;
+  top: -60px;
   text-align: center;
+  margin-top: 40px;
+  border-bottom: 1px solid #f9f7fe;
 }
+
+div .card {
+  font-size: 10px;
+  background-color: transparent;
+  border: 0;
+  max-height: fit-content;
+}
+
 .day-forecast {
   font-size: 16px;
+  color: #f65281;
 }
 .forecast-icon {
-  color: #fff;
+  color: #70757a;
   text-align: center;
   font-size: 50px;
   padding-bottom: 10px;
 }
 .degrees {
   font-size: 16px;
+  color: #f65281;
 }
 .author {
   display: block;
   text-align: center;
   font-size: 12px;
+  color: #a16778;
 }
