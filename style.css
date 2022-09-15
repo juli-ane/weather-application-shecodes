@@ -71,7 +71,6 @@ ul {
 .weather-icon {
   position: relative;
   top: 25px;
-  max-width: 50px;
 }
 
 .bigDegrees {
