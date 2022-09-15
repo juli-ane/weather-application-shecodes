@@ -1,6 +1,7 @@
 /// serch engine API - done
 
 function showTemp(response) {
+  console.log(response.data);
   document.querySelector("#displayCity").innerHTML = response.data.name;
 
   let cityTemperature = Math.round(response.data.main.temp);
@@ -19,6 +20,14 @@ function showTemp(response) {
 
   let windNow = document.querySelector("#wind");
   windNow.innerHTML = `Wind: ${wind} km/h`;
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+
+  iconElement.setAttribute(`alt, response.data.weather[0].main`);
 }
 function searchCity(city) {
   let apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
