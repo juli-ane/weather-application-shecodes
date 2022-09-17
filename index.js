@@ -4,6 +4,8 @@ function showTemp(response) {
   console.log(response.data);
   document.querySelector("#displayCity").innerHTML = response.data.name;
 
+  celsiusTemperature = response.data.main.temp;
+
   let cityTemperature = Math.round(response.data.main.temp);
   let sky = response.data.weather[0].main;
   let humidity = response.data.main.humidity;
@@ -29,6 +31,7 @@ function showTemp(response) {
 
   iconElement.setAttribute(`alt, response.data.weather[0].main`);
 }
+
 function searchCity(city) {
   let apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
   let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -59,6 +62,32 @@ let locationButton = document.querySelector("#locationButton");
 locationButton.addEventListener("click", showCurrentTemperature);
 
 searchCity("Santiago");
+
+// ---- Celsius Fah convertion
+
+function showBigTempCel(event) {
+  event.preventDefault();
+  tempfar.classList.remove("unitFahrenheit");
+  tempcel.classList.add("unitCelsius");
+  let bigNumber = document.querySelector("#bigTemperature");
+  bigNumber.innerHTML = Math.round(celsiusTemperature);
+}
+
+function showBigTempFah(event) {
+  event.preventDefault();
+  tempcel.classList.remove("unitCelsius");
+  tempfar.classList.add("unitFahrenheit");
+  let bigNumber = document.querySelector("#bigTemperature");
+  bigNumber.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
+}
+
+let celsiusTemperature = null;
+
+let tempcel = document.querySelector("#celsius");
+tempcel.addEventListener("click", showBigTempCel);
+
+let tempfar = document.querySelector("#fahrenheit");
+tempfar.addEventListener("click", showBigTempFah);
 
 //time - done
 

@@ -22,7 +22,7 @@
     <div class="app">
       <div class="container content">
         <form id="city-form">
-          <input type="search" placeholder="Enter your city" id="input-city" class="typeCity" />
+          <input type="search" placeholder="Enter your city" id="input-city" class="typeCity" autocomplete="off" />
           <input type="submit" value="Seach" class="search" />
           <button class="search" id="locationButton">Location</button>
         </form>
@@ -34,7 +34,8 @@
         <h2>
           <p id="bigTemperature"></p>
           <p class="bigDegrees">
-            <a href="#" class="unit" id="celsius">ºC</a>
+            <a href="#" class="unitCelsius" id="celsius">ºC |</a>
+            <a href="#" class="unitFahrenheit" id="fahrenheit">ºF</a>
           </p>
         </h2>
         <h4 id="currentTime"></h4>
