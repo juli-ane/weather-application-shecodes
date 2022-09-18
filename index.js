@@ -1,7 +1,36 @@
+//time - done
+//*
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
+}
+
 /// serch engine API - done
 
 function showTemp(response) {
-  console.log(response.data);
+  let timeNow = document.querySelector("#currentTime");
+  timeNow.innerHTML = formatDate(response.data.dt * 1000);
+
+  console.log(response.data.dt * 1000);
+
   document.querySelector("#displayCity").innerHTML = response.data.name;
 
   celsiusTemperature = response.data.main.temp;
@@ -28,8 +57,7 @@ function showTemp(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-
-  iconElement.setAttribute(`alt, response.data.weather[0].main`);
+  iconElement.setAttribute("alt", `response.data.weather[0].main`);
 }
 
 function searchCity(city) {
@@ -61,9 +89,9 @@ form.addEventListener("submit", showCity);
 let locationButton = document.querySelector("#locationButton");
 locationButton.addEventListener("click", showCurrentTemperature);
 
-searchCity("Santiago");
+searchCity("Buenos Aires");
 
-// ---- Celsius Fah convertion
+// ---- Celsius Fahrenheit conversion
 
 function showBigTempCel(event) {
   event.preventDefault();
@@ -88,37 +116,3 @@ tempcel.addEventListener("click", showBigTempCel);
 
 let tempfar = document.querySelector("#fahrenheit");
 tempfar.addEventListener("click", showBigTempFah);
-
-//time - done
-
-function formatDate() {
-  let now = new Date();
-
-  now.getDay();
-  now.getHours();
-  now.getMinutes();
-
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let day = days[now.getDay()];
-  let hours = now.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  let minutes = now.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-
-  return `${day} ${hours}:${minutes}`;
-}
-
-let timeNow = document.querySelector("#currentTime");
-timeNow.innerHTML = formatDate();
