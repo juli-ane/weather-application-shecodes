@@ -22,14 +22,44 @@ function formatDate(timestamp) {
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
+/// forecast
+
+function displayForecast(response) {
+  console.log(response.data);
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = '<div class="row justify-content-center">';
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` <div class="col-md-2">
+            <div class="card">
+              <div class="card-body">
+                <h6 class="card-title day-forecast">${day}</h6>
+                <i class="fa-solid fa-cloud-rain forecast-icon"></i>
+                <p class="card-text degrees">25º <strong>34º</strong></p>
+              </div>
+            </div>
+          </div>
+`;
+  });
+  forecastHTML = forecastHTML + "</div>";
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = `c95d60a1e3adbeb286133f1ebebc2579`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
 
 /// serch engine API - done
 
 function showTemp(response) {
   let timeNow = document.querySelector("#currentTime");
   timeNow.innerHTML = formatDate(response.data.dt * 1000);
-
-  console.log(response.data.dt * 1000);
 
   document.querySelector("#displayCity").innerHTML = response.data.name;
 
@@ -58,6 +88,8 @@ function showTemp(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", `response.data.weather[0].main`);
+
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
