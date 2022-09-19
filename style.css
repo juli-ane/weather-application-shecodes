@@ -123,6 +123,7 @@ div .card {
 .degrees {
   font-size: 16px;
   color: #f65281;
+  text-align: center;
 }
 .author {
   display: block;

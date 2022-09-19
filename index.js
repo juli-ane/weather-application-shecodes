@@ -24,26 +24,44 @@ function formatDate(timestamp) {
 }
 /// forecast
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function displayForecast(response) {
-  console.log(response.data);
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = '<div class="row justify-content-center">';
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      ` <div class="col-md-2">
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        ` <div class="col-md-2">
             <div class="card">
               <div class="card-body">
-                <h6 class="card-title day-forecast">${day}</h6>
-                <i class="fa-solid fa-cloud-rain forecast-icon"></i>
-                <p class="card-text degrees">25º <strong>34º</strong></p>
+                <h6 class="card-title day-forecast">${formatDay(
+                  forecastDay.dt
+                )}</h6>
+                <img src="http://openweathermap.org/img/wn/${
+                  forecastDay.weather[0].icon
+                }@2x.png" alt=""" class="forecast-icon">
+                <p class="card-text degrees">${Math.round(
+                  forecastDay.temp.min
+                )}° <strong>${Math.round(forecastDay.temp.max)}°</strong></p>
               </div>
             </div>
           </div>
 `;
+    }
   });
+
   forecastHTML = forecastHTML + "</div>";
   forecastElement.innerHTML = forecastHTML;
 }
@@ -51,7 +69,6 @@ function displayForecast(response) {
 function getForecast(coordinates) {
   let apiKey = `c95d60a1e3adbeb286133f1ebebc2579`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 
