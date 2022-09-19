@@ -139,29 +139,3 @@ let locationButton = document.querySelector("#locationButton");
 locationButton.addEventListener("click", showCurrentTemperature);
 
 searchCity("Buenos Aires");
-
-// ---- Celsius Fahrenheit conversion
-
-function showBigTempCel(event) {
-  event.preventDefault();
-  tempfar.classList.remove("unitFahrenheit");
-  tempcel.classList.add("unitCelsius");
-  let bigNumber = document.querySelector("#bigTemperature");
-  bigNumber.innerHTML = Math.round(celsiusTemperature);
-}
-
-function showBigTempFah(event) {
-  event.preventDefault();
-  tempcel.classList.remove("unitCelsius");
-  tempfar.classList.add("unitFahrenheit");
-  let bigNumber = document.querySelector("#bigTemperature");
-  bigNumber.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
-}
-
-let celsiusTemperature = null;
-
-let tempcel = document.querySelector("#celsius");
-tempcel.addEventListener("click", showBigTempCel);
-
-let tempfar = document.querySelector("#fahrenheit");
-tempfar.addEventListener("click", showBigTempFah);
