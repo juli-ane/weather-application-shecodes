@@ -103,6 +103,7 @@ div .card {
   background-color: transparent;
   border: 0;
   max-height: fit-content;
+  padding-top: 30px;
 }
 
 .day-forecast {
@@ -110,10 +111,8 @@ div .card {
   color: #f65281;
 }
 .forecast-icon {
-  display: block;
-  margin: 0 auto;
-  color: #70757a;
-  padding-bottom: 10px;
+  position: relative;
+  right: 15px;
 }
 .degrees {
   font-size: 16px;
