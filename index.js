@@ -76,7 +76,7 @@ function getForecast(coordinates) {
 
 function showTemp(response) {
   let timeNow = document.querySelector("#currentTime");
-  timeNow.innerHTML = formatDate(response.data.dt * 1000);
+  timeNow.innerHTML = `Last Update: ${formatDate(response.data.dt * 1000)}`;
 
   document.querySelector("#displayCity").innerHTML = response.data.name;
 

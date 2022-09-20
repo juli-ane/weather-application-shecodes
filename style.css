@@ -10,6 +10,8 @@ h4 {
   color: #393e46;
   padding-left: 60px;
   max-height: 70px;
+  font-size: 10px;
+  font-weight: 400;
 }
 
 h1 {
@@ -25,7 +27,7 @@ ul {
   list-style: none;
   font-size: 12px;
   position: relative;
-  bottom: -110px;
+  bottom: -80px;
   color: #70757a;
   margin: 0;
   padding: 0;
@@ -68,9 +70,15 @@ ul {
 
 /* Serch results section */
 
+.cityResult {
+  font-size: 30px;
+}
+
 .weather-icon {
   position: relative;
-  top: 25px;
+  top: 30px;
+  right: 140px;
+  max-width: 150%;
 }
 
 .bigDegrees {
@@ -80,26 +88,13 @@ ul {
   left: 80px;
 }
 
-.unitCelsius {
-  color: black;
-  cursor: default;
-  text-decoration: none;
-}
-.unitCelsius:hover {
-  text-decoration: none;
-}
-.unitFahrenheit {
-  color: black;
-  text-decoration: none;
-}
-
 /* Forecast section */
 
 .forecast-weather {
   position: relative;
   top: -60px;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 30px;
   border-bottom: 1px solid #f9f7fe;
 }
 
@@ -115,9 +110,9 @@ div .card {
   color: #f65281;
 }
 .forecast-icon {
+  display: block;
+  margin: 0 auto;
   color: #70757a;
-  text-align: center;
-  font-size: 50px;
   padding-bottom: 10px;
 }
 .degrees {
